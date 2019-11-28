@@ -1,0 +1,16 @@
+<mat-card-title>Todos</mat-card-title>
+<h4 *ngIf = "userId == -1">Serch by user: </h4>
+<mat-form-field *ngIf = "userId == -1">
+  <mat-select >
+    <mat-option *ngFor="let user of users" [value]="user.id" (click) = 'selectUser(user.id)' >
+      {{user.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-card *ngFor ='let todo of itemArray'>
+    <h3>{{todo. title}}</h3>
+   
+    <mat-checkbox [checked] ="todo.completed">  completed  </mat-checkbox>
+</mat-card>
+<!-- (click) = 'changeView(user.id)' -->

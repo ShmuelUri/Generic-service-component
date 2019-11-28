@@ -1,0 +1,27 @@
+
+
+<mat-card-title>Posts</mat-card-title>
+<h4 *ngIf = "userId == -1">Serch by user: </h4>
+<mat-form-field *ngIf = "userId == -1">
+  <mat-select >
+    <mat-option *ngFor="let user of users" [value]="user.id" (click) = 'selectUser(user.id)' >
+      {{user.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-accordion class="big" *ngFor = "let post of itemArray">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-card><b>{{post.title}}</b></mat-card>       
+                    </mat-panel-title>
+                    <mat-panel-description>
+                                <mat-card>{{post.body}}</mat-card>
+                             
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <app-commends *ngIf = "userId != -1"  [postId] = "post.id"></app-commends>
+                </mat-expansion-panel>
+               
+              </mat-accordion>

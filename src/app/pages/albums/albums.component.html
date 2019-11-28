@@ -1,0 +1,14 @@
+
+
+<mat-card-title>Albums</mat-card-title>
+<h4 *ngIf = "userId == -1">Serch by user: </h4>
+<mat-form-field *ngIf = "userId == -1">
+  <mat-select >
+    <mat-option *ngFor="let user of users" [value]="user.id" (click) = 'selectUser(user.id)'>
+      {{user.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-card *ngFor = 'let album of itemArray'>{{album.title}}</mat-card>
+

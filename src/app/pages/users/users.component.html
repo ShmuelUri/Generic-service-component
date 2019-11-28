@@ -1,0 +1,9 @@
+
+<mat-card>
+    <mat-card-title>
+        Welcome to users page
+    </mat-card-title>
+    <mat-card-content *ngFor = 'let u of itemArray'>
+            <button mat-raised-button color=primary (click) = 'selectUser(u.id)'>{{u.name}}</button>
+    </mat-card-content>
+</mat-card>
