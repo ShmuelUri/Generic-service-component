@@ -45,7 +45,7 @@ export class BaseComponent<T extends Base> implements OnInit {
     })
   }
   selectUser(userId:number){
-    alert(userId)
+   
     this.getItemsIf("userId=" +userId)
   }
 
